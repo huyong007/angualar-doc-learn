@@ -2,13 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NameEditorComponent,
+    ProfileEditorComponent,
+    HeroFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
