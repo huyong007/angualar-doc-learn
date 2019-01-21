@@ -4,29 +4,47 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NameEditorComponent } from './name-editor/name-editor.component';
-import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
-import { HeroFormComponent } from './hero-form/hero-form.component';
-import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
-import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
+
 import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard.module';
+import { LearnFormModule } from './learn-form/learn-form.module';
+import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard/customer-dashboard.component';
+import { HeroFormComponent } from './learn-form/hero-form/hero-form.component';
+
+
+const appRoutes: Routes = [
+  {
+    path: 'customer',
+    component: CustomerDashboardComponent,
+    data: { title: 'customer' }
+  },
+  {
+    path: 'heroform',
+    component: HeroFormComponent,
+    data: { title: 'heroform' }
+  },
+  { path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+  },
+  { path: '**', component: CustomerDashboardComponent }
+];
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NameEditorComponent,
-    ProfileEditorComponent,
-    HeroFormComponent,
-    DynamicFormComponent,
-    DynamicFormQuestionComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    CustomerDashboardModule // add the feature module here
-
+    CustomerDashboardModule, // add the feature module here
+    LearnFormModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
 
   ],
   providers: [],

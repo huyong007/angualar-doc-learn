@@ -1,17 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<app-hero-form></app-hero-form>
-<br>
-<br>
-<app-name-editor></app-name-editor>
-<br>
-<br>
-<app-profile-editor></app-profile-editor>
-<br>
-<br>
-<div>
-    <h2>Job Application for Heroes</h2>
-    <app-dynamic-form [questions]="questions"></app-dynamic-form>
-</div>
-<br>
-<br>
-<app-customer-dashboard></app-customer-dashboard>
+
+<h1>Angular Router</h1>
+<nav>
+  <button routerLink="/customer" routerLinkActive="active">customer</button>
+  <button routerLink="/heroform" routerLinkActive="active">heroform</button>
+</nav>
+<router-outlet></router-outlet>
+
