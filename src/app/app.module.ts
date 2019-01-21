@@ -8,6 +8,7 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-form-question.component';
+import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { DynamicFormQuestionComponent } from './dynamic-form-question/dynamic-fo
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CustomerDashboardModule // add the feature module here
+
 
   ],
   providers: [],
