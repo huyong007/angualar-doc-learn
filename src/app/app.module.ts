@@ -9,6 +9,7 @@ import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard
 import { LearnFormModule } from './learn-form/learn-form.module';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard/customer-dashboard.component';
 import { HeroFormComponent } from './learn-form/hero-form/hero-form.component';
+import { ProfileEditorComponent } from './learn-form/profile-editor/profile-editor.component';
 
 
 const appRoutes: Routes = [
@@ -21,6 +22,11 @@ const appRoutes: Routes = [
     path: 'heroform',
     component: HeroFormComponent,
     data: { title: 'heroform' }
+  },
+  {
+    path: 'profileeditor',
+    component: ProfileEditorComponent,
+    data: { title: 'profileeditor' }
   },
   { path: '',
     redirectTo: '/heroes',
