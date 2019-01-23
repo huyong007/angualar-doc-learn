@@ -9,37 +9,18 @@ import { CustomerDashboardModule } from './customer-dashboard/customer-dashboard
 import { LearnFormModule } from './learn-form/learn-form.module';
 import { CustomerDashboardComponent } from './customer-dashboard/customer-dashboard/customer-dashboard.component';
 import { HeroFormComponent } from './learn-form/hero-form/hero-form.component';
-import { ProfileEditorComponent } from './learn-form/profile-editor/profile-editor.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
-const appRoutes: Routes = [
-  {
-    path: 'customer',
-    component: CustomerDashboardComponent,
-    data: { title: 'customer' }
-  },
-  {
-    path: 'heroform',
-    component: HeroFormComponent,
-    data: { title: 'heroform' }
-  },
-  {
-    path: 'profileeditor',
-    component: ProfileEditorComponent,
-    data: { title: 'profileeditor' }
-  },
-  { path: '',
-    redirectTo: '/heroes',
-    pathMatch: 'full'
-  },
-  { path: '**', component: CustomerDashboardComponent }
-];
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,10 +28,8 @@ const appRoutes: Routes = [
     FormsModule,
     CustomerDashboardModule, // add the feature module here
     LearnFormModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+
+    AppRoutingModule
 
   ],
   providers: [],
